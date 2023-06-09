@@ -1,0 +1,169 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "WebDNA",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#dropdown"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#symbols"
+		},
+		{
+			"include": "#tags"
+		},
+		{
+			"include": "#values"
+		},
+		{
+			"include": "#normal"
+		},
+		{
+            "key": "d",
+            "command": "show_overlay",
+            "args": {
+                "overlay": "command_palette",
+                "text": "dd\n df\n dk\n"
+            },
+            "context": [
+                { "key": "editorTextFocus", "operator": "equal", "operand": true }
+            ]
+        }
+	],
+	
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.webdna",
+					"match": "\\[!](.*?)\\[/!]"
+				}
+			]
+		},
+		"normal": {
+			"patterns": [
+				{
+					"name": "entity.name.function",
+					"match": ".?"
+				}
+			]
+		},
+		"tags": {
+			"patterns": [
+				{
+					"name": "entity.name.tag.webdna",
+					"match": "^\\[(context|tag|listallcontexts|listalltags|browsername|ipaddress|realip|reffer|httpmethod|thisfile|thishost|thisport|thisurl|thisurlplusget|setmimeheader|getmimeheader|listmimeheaders|returnraw|)|\\[/(context|tag|listallcontexts|listalltags|browsername|ipaddress|realip|reffer|httpmethod|thisfile|thishost|thisport|thisurl|thisurlplusget|setmimeheader|getmimeheader|listmimeheaders|returnraw|)]"
+				}	
+			]
+		},
+		"functions":{
+			"patterns": [
+				{
+					"name": "entity.name.class",
+					"match": "^\\[(function)|\\[/(function)]"
+				}
+			]
+		},
+		"keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.webdna",
+                    "match": "\\b(if|else|elseif|while|do|until|for|foreach|in|switch|case|default|break|continue|return|function|global|local)\\b"
+                }
+            ]
+        },
+		"values": {
+            "patterns": [
+                {
+                    "name": "variable.parameter",
+                    "match": "\\b(id|name|color)\\b"
+                }
+            ]
+        },
+		"strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.webdna",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.webdna",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.webdna",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.webdna",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+		"numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.webdna",
+                    "match": "\\b\\d+\\b"
+                }
+            ]
+        },
+		"operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.assignment.webdna",
+                    "match": "="
+                },
+                {
+                    "name": "keyword.operator.arithmetic.webdna",
+                    "match": "\\+|-|\\*|/|%|\\^"
+                },
+                {
+                    "name": "keyword.operator.comparison.webdna",
+                    "match": "==|!=|<|>|<=|>=|~=|<>"
+                },
+                {
+                    "name": "keyword.operator.logical.webdna",
+                    "match": "and|or|not"
+                }
+            ]
+        }
+	},
+	"scopeName": "source.dna",
+	"keybindings": [
+		{
+			"key": "d",
+			"command": "show_overlay",
+			"args": {
+				"overlay": "command_palette",
+				"text": "dd\n df\n dk\n"
+			},
+			"context": [
+				{ "key": "editorTextFocus", "operator": "equal", "operand": true }
+			]
+		}
+	]
+}

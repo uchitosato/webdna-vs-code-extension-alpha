@@ -1,0 +1,25 @@
+{
+  "name": "webdna",
+  "displayName": "WebDNA",
+  "description": "webdna",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "webdna",
+      "aliases": ["WebDNA", "webdna"],
+      "extensions": [".dna"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "webdna",
+      "scopeName": "source.dna",
+      "path": "./syntaxes/webdna.tmLanguage.json"
+    }]
+  }
+}
